@@ -1,0 +1,184 @@
+# Menu Boot PXE
+
+DEFAULT vesamenu.c32
+
+## Menu - Title ##
+MENU TITLE  .: My HOME-PXE :.
+
+## Menu - Options ##
+timeout 300
+NOESCAPE 1
+
+## Theme ##
+MENU BACKGROUND grub-wallpapers.png
+
+        # Windows - Menu
+        #MENU BEGIN [Windows]
+        #MENU TITLE [Windows]
+
+            # Windows 10
+            #LABEL - Install Windows 10
+            #Load COM32 LINUX32 for Wimboot
+            #com32 linux.c32
+            #APPEND wimboot initrdfile=windows/10_1703/bootmgr,windows/10_1703/boot/bcd,windows/10_1703/boot/boot.sdi,windows/10_1703/sources/boot.wim
+
+            #TEXT HELP
+            #  * Install Windows 10
+            #  * Be careful - data on your hard drive will be deleted
+            #ENDTEXT
+        #MENU END
+# Linux - Menu
+    MENU BEGIN [Linux Distributions]
+    MENU TITLE [Linux Distributions]
+
+        # Ubuntu 16.04 LTS (x64) - Desktop
+        LABEL - Install Ubuntu Desktop 16.04 LTS (Netinstall)
+	KERNEL linux/ubuntu/xenial/linux
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_desktop_ks.cfg --
+
+        TEXT HELP
+          * Install Ubuntu 16.04 LTS Desktop (CLI) - Netinstall
+          * Be careful - data on your hard drive will be deleted
+        ENDTEXT
+	
+	# Ubuntu 16.04 LTS (x64) - Server
+        LABEL - Install Ubuntu Server 16.04 LTS (Netinstall)
+        KERNEL linux/ubuntu/xenial/linux
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_server_ks.cfg --
+
+        TEXT HELP
+          * Install Ubuntu 16.04 LTS Server (CLI) - Netinstall
+          * Be careful - data on your hard drive will be deleted
+        ENDTEXT
+	
+	# Debian 9.0 (amd64)
+        LABEL - Install Debian 9.0 (Netinstall)
+        KERNEL linux/debian/linux
+        APPEND vga=788 initrd=linux/debian/initrd.gz ks=http://192.168.1.5/ks/debian_server.cfg --
+
+        TEXT HELP
+          * Install Debian 9.0 (CLI) - Netinstall
+          * Be careful - data on your hard drive will be deleted
+        ENDTEXT
+
+    MENU END
+
+  # Tools - Menu
+  MENU BEGIN [Tools]
+  MENU TITLE [Tools]
+
+  MENU BEGIN [Clonning Tools]
+  MENU TITLE [Clonnigs Tools]
+
+        # Clonezilla - ISO
+        LABEL - CloneZilla (Live)
+        LINUX memdisk
+        INITRD iso/clonezilla-live-2.5.2-17-amd64.iso
+        APPEND iso
+
+        TEXT HELP
+          * Run Clonezilla
+          * All the programs will be copied to RAM
+        ENDTEXT
+
+        # Acronis - ISO
+        LABEL - Acronis True Image (Live)
+        LINUX memdisk
+        INITRD iso/AcronisTrueImage2016_6595.iso
+        APPEND iso
+
+        TEXT HELP
+          * Run Acronis True Image
+          * All the programs will be copied to RAM
+        ENDTEXT
+    MENU END
+
+    MENU BEGIN [Partition Tools]
+    MENU TITLE [Partition Tools]
+
+      # GPARTED - ISO
+      LABEL - Gparted (Live)
+      LINUX memdisk
+      INITRD iso/gparted-live-0.28.1-1-amd64.iso
+      APPEND iso
+
+      TEXT HELP
+        * Run Gparted - partition Editor (Live)
+        * All the programs will be copied to RAM
+      ENDTEXT
+  MENU END
+
+
+  MENU BEGIN [Password Tools]
+  MENU TITLE [Password Tools]
+
+      # Offline Windows Password - ISO
+      LABEL - Offline Windows Password & Registry Editor (Live)
+      LINUX memdisk
+      INITRD iso/ontpre.iso
+      APPEND iso
+
+      TEXT HELP
+        * Run Offline Windows Password & Registry Editor (Live)
+        * All the programs will be copied to RAM
+      ENDTEXT
+  MENU END
+
+  MENU BEGIN [Testing Tools]
+  MENU TITLE [Testing Tools]
+
+      # Memtest+86
+      LABEL - Memtest (Live)
+      kernel memtest/mt86plus
+
+      TEXT HELP
+        * Run memory test using Memtest86+
+      ENDTEXT
+  MENU END
+
+  MENU BEGIN [Boot Tools]
+  MENU TITLE [Boot Tools]
+
+    # super_grub2_disk_hybrid_2.02s9.iso
+    LABEL - Super Grub2 Disk (Live)
+    LINUX memdisk
+    INITRD iso/super_grub2_disk_hybrid_2.02s9.iso
+    APPEND iso
+
+    TEXT HELP
+      * Run memory GRUB detect/repair Tool
+      * All the programs will be copied to RAM
+    ENDTEXT
+  MENU END
+
+  MENU BEGIN [Netboot.yyz]
+  MENU TITLE [Netboot.xyz]
+
+    LABEL - Netboot.xyz (Live)
+    LINUX memdisk
+    INITRD iso/netboot.xyz.iso	
+    APPEND iso
+
+    TEXT HELP
+      * Run Netboot.xyz
+      * All the programs will be copied to RAM
+    ENDTEXT
+  MENU END
+
+MENU END
+
+
+# Separator
+MENU SEPARATOR
+
+  # Continue Boot on first HDD
+  LABEL Continue Boot on first HDD
+  MENU DEFAULT
+        KERNEL chain.c32
+        APPEND hd0 0
+
+        TEXT HELP
+          * Boot on first disk
+        ENDTEXT
+  MENU END
+

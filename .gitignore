@@ -1,0 +1,7 @@
+# ignore folder
+iso/*
+windows/*
+
+# ignore files
+*.swp
+
