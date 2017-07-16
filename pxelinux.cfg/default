@@ -12,24 +12,9 @@ NOESCAPE 1
 ## Theme ##
 MENU BACKGROUND grub-wallpapers.png
 
-        # Windows - Menu
-        #MENU BEGIN [Windows]
-        #MENU TITLE [Windows]
-
-            # Windows 10
-            #LABEL - Install Windows 10
-            #Load COM32 LINUX32 for Wimboot
-            #com32 linux.c32
-            #APPEND wimboot initrdfile=windows/10_1703/bootmgr,windows/10_1703/boot/bcd,windows/10_1703/boot/boot.sdi,windows/10_1703/sources/boot.wim
-
-            #TEXT HELP
-            #  * Install Windows 10
-            #  * Be careful - data on your hard drive will be deleted
-            #ENDTEXT
-        #MENU END
-# Linux - Menu
-    MENU BEGIN [Linux Distributions]
-    MENU TITLE [Linux Distributions]
+   # Linux - Menu
+   MENU BEGIN [Linux Distributions]
+   MENU TITLE [Linux Distributions]
 
         # Ubuntu 16.04 LTS (x64) - Desktop
         LABEL - Install Ubuntu Desktop 16.04 LTS (Netinstall)
@@ -50,17 +35,6 @@ MENU BACKGROUND grub-wallpapers.png
           * Install Ubuntu 16.04 LTS Server (CLI) - Netinstall
           * Be careful - data on your hard drive will be deleted
         ENDTEXT
-	
-	# Debian 9.0 (amd64)
-        LABEL - Install Debian 9.0 (Netinstall)
-        KERNEL linux/debian/linux
-        APPEND vga=788 initrd=linux/debian/initrd.gz ks=http://192.168.1.5/ks/debian_server.cfg --
-
-        TEXT HELP
-          * Install Debian 9.0 (CLI) - Netinstall
-          * Be careful - data on your hard drive will be deleted
-        ENDTEXT
-
     MENU END
 
   # Tools - Menu
@@ -181,4 +155,3 @@ MENU SEPARATOR
           * Boot on first disk
         ENDTEXT
   MENU END
-
