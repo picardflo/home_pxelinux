@@ -19,7 +19,7 @@ MENU BACKGROUND grub-wallpapers.png
         # Ubuntu 16.04 LTS (x64) - Desktop
         LABEL - Install Ubuntu Desktop 16.04 LTS (Netinstall)
 	KERNEL linux/ubuntu/xenial/linux
-        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_desktop_ks.cfg --
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_desktop_ks.cfg net.ifnames=0 --
 
         TEXT HELP
           * Install Ubuntu 16.04 LTS Desktop (CLI) - Netinstall
@@ -29,7 +29,7 @@ MENU BACKGROUND grub-wallpapers.png
 	# Ubuntu 16.04 LTS (x64) - Server
         LABEL - Install Ubuntu Server 16.04 LTS (Netinstall)
         KERNEL linux/ubuntu/xenial/linux
-        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_server_ks.cfg --
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_server_ks.cfg net.ifnames=0 --
 
         TEXT HELP
           * Install Ubuntu 16.04 LTS Server (CLI) - Netinstall
