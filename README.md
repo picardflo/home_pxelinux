@@ -35,7 +35,7 @@ mkdir iso
 
 - Download last version of Acronis-*.iso (from official Website) - https://www.acronis.com/ (optional)
 
-Correct the following files *and adapt them to your environment*:
+Correct the following files and adapt them to your environment :
 - pxelinux.cfg/default (isoname and URs)
 - /linux/ubuntu/xenial/ks/bionic_desktop_ks.cfg (URLs)
 - /linux/ubuntu/xenial/ks/bionic_server_ks.cfg (URLs)
@@ -43,9 +43,10 @@ Correct the following files *and adapt them to your environment*:
 - /linux/ubuntu/xenial/ks/xenial_server_ks.cfg (URLs)
 
 
-4 - Create symlinks (Get *.KS files over http) in /var/www/html/ (defaut apache folder)
+4 - Create symlinks (get *.ks files over http) in /var/www/html/
 
-```ln -s /var/www/html/ks <PATH_OF_YOUR_TFTPBoot_folder>
+```
+ln -s /var/www/html/ks <PATH_OF_YOUR_TFTPBoot_folder>
 ```
 
 ## License
