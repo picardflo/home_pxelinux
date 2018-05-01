@@ -55,6 +55,6 @@ ln -s /var/www/html/ks <PATH_OF_YOUR_TFTPBoot_folder>
 - Ubuntu Local mirror : https://wiki.dinfadom.com/index.php/Apt-mirror
 - Kickstart Ubuntu :
   - https://wiki.dinfadom.com/index.php/Kickstart_-_Ubuntu_16.04_LTS
-  - https://wiki.dinfadom.com/index.php/Kickstart_-_Ubuntu_14.04_LTS
+  - https://wiki.dinfadom.com/index.php/Kickstart_-_Ubuntu_18.04_LTS
 
 ## License
