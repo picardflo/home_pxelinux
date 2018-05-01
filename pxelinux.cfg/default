@@ -19,7 +19,7 @@ MENU BACKGROUND grub-wallpapers.png
         # Ubuntu 16.04 LTS (x64) - Desktop
         LABEL - Install Ubuntu Desktop 16.04 LTS (Netinstall)
 	KERNEL linux/ubuntu/xenial/linux
-        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_desktop_ks.cfg net.ifnames=0 --
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://mirror.home.lan/ks/xenial_desktop_ks.cfg net.ifnames=0 ipv6.disable=1 -- quiet
 
         TEXT HELP
           * Install Ubuntu 16.04 LTS Desktop (CLI) - Netinstall
@@ -29,12 +29,35 @@ MENU BACKGROUND grub-wallpapers.png
 	# Ubuntu 16.04 LTS (x64) - Server
         LABEL - Install Ubuntu Server 16.04 LTS (Netinstall)
         KERNEL linux/ubuntu/xenial/linux
-        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://192.168.1.5/ks/xenial_server_ks.cfg net.ifnames=0 --
+        APPEND vga=788 initrd=linux/ubuntu/xenial/initrd.gz ks=http://mirror.home.lan/ks/xenial_server_ks.cfg net.ifnames=0 ipv6.disable=1 -- quiet
 
         TEXT HELP
           * Install Ubuntu 16.04 LTS Server (CLI) - Netinstall
           * Be careful - data on your hard drive will be deleted
         ENDTEXT
+
+	MENU SEPARATOR
+
+	# Ubuntu 18.04 LTS (x64) - Desktop
+        LABEL - Install Ubuntu Desktop 18.04 LTS (Netinstall)
+        KERNEL linux/ubuntu/bionic/linux
+        APPEND vga=788 initrd=linux/ubuntu/bionic/initrd.gz ks=http://mirror.home.lan/ks/bionic_desktop_ks.cfg net.ifnames=0 ipv6.disable=1 -- quiet
+
+        TEXT HELP
+          * Install Ubuntu 18.04 LTS Desktop (CLI) - Netinstall
+          * Be careful - data on your hard drive will be deleted
+        ENDTEXT
+
+	# Ubuntu 18.04 LTS (x64) - Server
+        LABEL - Install Ubuntu Server 18.04 LTS (Netinstall)
+        KERNEL linux/ubuntu/bionic/linux
+        APPEND vga=788 initrd=linux/ubuntu/bionic/initrd.gz ks=http://mirror.home.lan/ks/bionic_server_ks.cfg net.ifnames=0 ipv6.disable=1 -- quiet
+
+        TEXT HELP
+          * Install Ubuntu 18.04 LTS Server (CLI) - Netinstall
+          * Be careful - data on your hard drive will be deleted
+        ENDTEXT
+
     MENU END
 
   # Tools - Menu
@@ -42,12 +65,12 @@ MENU BACKGROUND grub-wallpapers.png
   MENU TITLE [Tools]
 
   MENU BEGIN [Clonning Tools]
-  MENU TITLE [Clonnigs Tools]
+  MENU TITL
 
         # Clonezilla - ISO
         LABEL - CloneZilla (Live)
         LINUX memdisk
-        INITRD iso/clonezilla-live-2.5.2-17-amd64.iso
+	INITRD iso/clonezilla-live-2.5.2-31-amd64.iso
         APPEND iso
 
         TEXT HELP
@@ -73,7 +96,7 @@ MENU BACKGROUND grub-wallpapers.png
       # GPARTED - ISO
       LABEL - Gparted (Live)
       LINUX memdisk
-      INITRD iso/gparted-live-0.28.1-1-amd64.iso
+      INITRD iso/gparted-live-0.30.0-1-amd64.iso
       APPEND iso
 
       TEXT HELP
@@ -140,7 +163,6 @@ MENU BACKGROUND grub-wallpapers.png
   MENU END
 
 MENU END
-
 
 # Separator
 MENU SEPARATOR
