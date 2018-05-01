@@ -30,8 +30,8 @@ mkdir iso
 - Download last version of clonezilla-live-*.iso (from official Website) - https://gparted.org/download.php
 - Download last version of gparted-live-*.iso (from official Website)  - https://clonezilla.org/
 - Download last version of netboot.xyz.iso (from official Website) - https://netboot.xyz/
-- DOwnload last version of super_grub2_disk_hybrid_*.iso (from official Website) - https://www.supergrubdisk.org/super-grub2-disk/
-- DOwnload last version of  ontpre.iso (Offline NT Password & Registry Editor)- http://www.octetmalin.net/windows/tutoriels/offline-nt-password-registry-editor.php
+- Download last version of super_grub2_disk_hybrid_*.iso (from official Website) - https://www.supergrubdisk.org/super-grub2-disk/
+- Download last version of  ontpre.iso (Offline NT Password & Registry Editor)- http://www.octetmalin.net/windows/tutoriels/offline-nt-password-registry-editor.php
 
 - Download last version of Acronis-*.iso (from official Website) - https://www.acronis.com/ (optional)
 
