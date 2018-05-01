@@ -44,6 +44,7 @@ Correct the following files *and adapt them to your environment*:
 
 
 4 - Create symlinks (Get *.KS files over http) in /var/www/html/ (defaut apache folder)
+
 ```ln -s /var/www/html/ks <PATH_OF_YOUR_TFTPBoot_folder>```
 
 ## License
