@@ -1,6 +1,7 @@
 # ignore folder
 iso/*
 windows/*
+memtest/*
 
 # ignore files
 *.swp
