@@ -1,4 +1,4 @@
-# Ubuntu_install_scripts
+# home_pxelinux
 
 This repo contains :
 
